@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido | Línea 8</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .map-container {
+            width: 100%;
+            height: 400px;
+            background-color: var(--gris-suave);
+            margin-bottom: 2rem;
+            border: 1px solid var(--borde);
+        }
+        .stop-list {
+            list-style: none;
+            border-left: 2px solid var(--azul-corporativo);
+            padding-left: 2rem;
+        }
+        .stop-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .stop-item::before {
+            content: '';
+            position: absolute;
+            left: -2.45rem;
+            top: 0.25rem;
+            width: 12px;
+            height: 12px;
+            background: var(--blanco);
+            border: 2px solid var(--azul-corporativo);
+            border-radius: 50%;
+        }
+        .stop-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--gris-texto);
+        }
+        .stop-item span {
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Dota_logo.png" alt="Logo DOTA" class="dota-logo">
+            <h1>Línea 8</h1>
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pagos.html">Pagos</a></li>
+                <li><a href="recorrido.html" class="active">Recorrido</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Mapa y Paradas</h2>
+            <p>Recorrido optimizado por autopista para una conexión directa entre Ezeiza y los puntos neurálgicos de CABA.</p>
+        </section>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104910.4357335601!2d-58.5368361!3d-34.7431206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9738f69e6b3%3A0xc47a19e5c43d999e!2sAeropuerto%20Internacional%20Ezeiza!5e0!3m2!1ses!2sar!4v1716750000000!5m2!1ses!2sar" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <section>
+            <ul class="stop-list">
+                <li class="stop-item">
+                    <strong>Terminal Aeropuerto Ezeiza</strong>
+                    <span>Dársena exclusiva frente a Terminal A.</span>
+                </li>
+                <li class="stop-item">
+                    <strong>Mercado Central</strong>
+                    <span>Parada estratégica sobre Autopista Riccheri.</span>
+                </li>
+                <li class="stop-item">
+                    <strong>Liniers</strong>
+                    <span>Combinación con Ferrocarril Sarmiento.</span>
+                </li>
+                <li class="stop-item">
+                    <strong>Congreso</strong>
+                    <span>Av. Entre Ríos e Hipólito Yrigoyen.</span>
+                </li>
+                <li class="stop-item">
+                    <strong>Plaza de Mayo</strong>
+                    <span>Terminal final - Av. de Mayo y Rivadavia.</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Línea 8 - Francisco Watson</p>
+            <p>Proyecto para Sky Consulting</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
