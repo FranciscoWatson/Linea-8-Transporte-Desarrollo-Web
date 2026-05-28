@@ -468,6 +468,7 @@ footer {
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
+        margin-left: auto;
     }
 
     nav ul {
@@ -475,16 +476,24 @@ footer {
         flex-direction: column;
         position: absolute;
         top: 100%;
-        left: 0;
         right: 0;
-        background: var(--azul-corporativo);
-        padding: 2rem;
-        gap: 1.5rem;
+        left: auto;
+        background: var(--blanco);
+        padding: 1.5rem;
+        gap: 1rem;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border: 1px solid var(--borde);
+        border-radius: 12px;
+        align-items: flex-start;
+        min-width: 220px;
     }
 
     nav ul.active {
         display: flex;
+    }
+
+    nav ul li a {
+        color: var(--gris-texto);
     }
     
     .hero-wrapper h2 {
