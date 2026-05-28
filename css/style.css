@@ -333,6 +333,19 @@ p {
     background-color: var(--azul-oscuro);
 }
 
+#accesos-rapidos .card a {
+    margin-top: 0;
+    padding: 0;
+    background: none;
+    color: var(--azul-corporativo);
+    font-size: 1.05rem;
+}
+
+#accesos-rapidos .card a:hover {
+    background: none;
+    color: var(--azul-oscuro);
+}
+
 /* Elementos UI (Tablas y Alertas) */
 .table-container {
     border-radius: 12px;
@@ -499,6 +512,51 @@ tr:last-child td {
     line-height: 1.8;
     color: var(--gris-secundario);
     margin: 0;
+}
+
+.route-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    counter-reset: route-step;
+}
+
+.route-list li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 0.9rem;
+    align-items: start;
+}
+
+.route-list li::before {
+    counter-increment: route-step;
+    content: counter(route-step);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul-corporativo);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+}
+
+.route-list strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--gris-texto);
+    margin-bottom: 0.2rem;
+}
+
+.route-list span {
+    font-size: 0.95rem;
+    color: var(--gris-secundario);
+    line-height: 1.7;
 }
 
 /* Footer */
