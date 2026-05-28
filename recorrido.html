@@ -27,38 +27,6 @@
             width: 100%;
             height: 100%;
         }
-        .stop-list {
-            list-style: none;
-            border-left: 3px solid var(--azul-corporativo);
-            padding-left: 2.5rem;
-            margin-top: 2rem;
-        }
-        .stop-item {
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-        .stop-item::before {
-            content: '';
-            position: absolute;
-            left: -3.2rem;
-            top: 0.2rem;
-            width: 16px;
-            height: 16px;
-            background: var(--blanco);
-            border: 4px solid var(--azul-corporativo);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(0, 121, 239, 0.1);
-        }
-        .stop-item strong {
-            display: block;
-            font-size: 1.2rem;
-            color: var(--gris-texto);
-            margin-bottom: 0.3rem;
-        }
-        .stop-item span {
-            font-size: 1rem;
-            color: var(--gris-secundario);
-        }
     </style>
 </head>
 <body>
@@ -77,6 +45,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="pagos.html">Pagos</a></li>
                 <li><a href="recorrido.html" class="active">Recorrido</a></li>
+                <li><a href="paradas.html">Paradas</a></li>
                 <li><a href="horarios.html">Horarios</a></li>
                 <li><a href="accesibilidad.html">Accesibilidad</a></li>
             </ul>
@@ -85,8 +54,8 @@
 
     <div class="hero-wrapper" style="padding-bottom: 4rem;">
         <div class="hero-content">
-            <h2>Mapa y <span>Paradas</span>.</h2>
-            <p>Conocé el recorrido detallado desde el aeropuerto hasta el centro porteño.</p>
+            <h2>Mapa del <span>Recorrido</span>.</h2>
+            <p>Visualizá el trayecto desde el aeropuerto hasta el centro porteño.</p>
         </div>
     </div>
 
@@ -98,33 +67,6 @@
             <div class="map-container">
                 <div id="map"></div>
             </div>
-
-            <ul class="stop-list">
-                <li class="stop-item">
-                    <strong>Aeropuerto Internacional Ezeiza</strong>
-                    <span>Dársena exclusiva frente a Terminal A. Partida.</span>
-                </li>
-                <li class="stop-item">
-                    <strong>Mercado Central</strong>
-                    <span>Parada estratégica sobre Autopista Riccheri.</span>
-                </li>
-                <li class="stop-item">
-                    <strong>Liniers (Av. Gral Paz)</strong>
-                    <span>Punto de conexión clave para la zona oeste.</span>
-                </li>
-                <li class="stop-item">
-                    <strong>Congreso (Av. Entre Ríos e Yrigoyen)</strong>
-                    <span>Descenso para conexión con Subte Línea A.</span>
-                </li>
-                <li class="stop-item">
-                    <strong>Plaza de Mayo</strong>
-                    <span>Conexión con Casa Rosada y Subtes A, D, E.</span>
-                </li>
-                <li class="stop-item">
-                    <strong>La Boca</strong>
-                    <span>Terminal final - Ramal A (Aeropuerto Ezeiza por Liniers).</span>
-                </li>
-            </ul>
         </section>
 
         <section class="detailed-route-section">
