@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa | Línea 8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <style>
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background-color: var(--gris-suave);
+            margin-bottom: 2rem;
+            border: 1px solid var(--borde);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/Dota_logo.png" alt="Logo DOTA" class="dota-logo">
+            <h1>Línea 8</h1>
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="mapa.html" class="active">Mapa</a></li>
+                <li><a href="paradas.html">Paradas</a></li>
+                <li><a href="horarios.html">Horarios</a></li>
+                <li><a href="accesibilidad.html">Accesibilidad</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-wrapper" style="padding-bottom: 4rem;">
+        <div class="hero-content">
+            <h2>Mapa del <span>Recorrido</span>.</h2>
+            <p>Visualizá el trayecto desde el aeropuerto hasta el centro porteño.</p>
+        </div>
+    </div>
+
+    <main>
+        <section>
+            <h2>Recorrido Semirápido (Autopista)</h2>
+            <p>El servicio utiliza la Autopista Riccheri y la Autopista 25 de Mayo para garantizar la vía más rápida de conexión.</p>
+            
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </section>
+
+        <section class="detailed-route-section">
+            <h2>Itinerario Detallado (Calle por Calle)</h2>
+            <p>Conocé el trayecto exacto que realiza la unidad por las calles de Buenos Aires y Gran Buenos Aires.</p>
+            
+            <div class="route-box">
+                <div class="route-header ida">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+                    <h3>Ida: A Aeropuerto de Ezeiza</h3>
+                </div>
+                <div class="route-content">
+                    <ol class="route-list">
+                        <li>
+                            <div>
+                                <strong>Salida desde La Boca</strong>
+                                <span>Brandsen y Hernandarias por Brandsen, Hernandarias, Aristóbulo del Valle, Irala.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Tramo Barracas</strong>
+                                <span>Olavarría, Palos, Necochea, Azopardo.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Ingreso al Centro</strong>
+                                <span>Cochabamba, Av. Paseo Colón, Estados Unidos, Av. Independencia, Perú.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Microcentro</strong>
+                                <span>Av. Belgrano, Av. Presidente Julio Argentino Roca, Bolívar, Av. de Mayo, Av. Rivadavia.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Acceso a General Paz</strong>
+                                <span>Cruce Av. General Paz, lateral oeste y Av. General Paz.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Autopista Ricchieri</strong>
+                                <span>Autopista Tte. Gral. Pablo Ricchieri y laterales norte.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Camino de Cintura</strong>
+                                <span>Monseñor Rodolfo Bufano (Ruta Prov. N° 4) por laterales.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Distribuidor Jorge Newbery</strong>
+                                <span>Italia, El Payador, Martín Miguel de Güemes, Av. Jorge Newbery, Rubén Darío, José Hernández.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Ingreso a Ezeiza</strong>
+                                <span>Joaquín V. González, Alfonsina Storni, Los Chivatos y Autopista Ricchieri hasta Aeropuerto Internacional de Ezeiza.</span>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="route-box">
+                <div class="route-header regreso">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>
+                    <h3>Regreso: A La Boca</h3>
+                </div>
+                <div class="route-content">
+                    <ol class="route-list">
+                        <li>
+                            <div>
+                                <strong>Salida desde Ezeiza</strong>
+                                <span>Autopista Tte. Gral. Pablo Ricchieri.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Distribuidor Jorge Newbery</strong>
+                                <span>Av. Jorge Newbery, Rubén Darío, José Hernández.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Tramo barrios residenciales</strong>
+                                <span>Joaquín V. González, Alfonsina Storni, Los Chivatos.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Distribuidor Puente 13</strong>
+                                <span>Laterales Autopista Ricchieri, Martín Miguel de Güemes, El Payador, Italia.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Camino de Cintura</strong>
+                                <span>Monseñor Rodolfo Bufano por laterales oeste y este.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Regreso a General Paz</strong>
+                                <span>Autopista Ricchieri, Av. General Paz y lateral este.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Ingreso al Centro</strong>
+                                <span>Av. Rivadavia, Rosario, Venezuela, Muñiz, Hipólito Yrigoyen.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Paseo Colón y Brasil</strong>
+                                <span>Av. Paseo Colón, Av. Brasil.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Arribo a La Boca</strong>
+                                <span>Av. Don Pedro de Mendoza, Benito Pérez Galdós, Wenceslao Villafañe, Martín Rodríguez, Brandsen, Hernandarias, Aristóbulo del Valle, Irala hasta Pinzón.</span>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Línea 8 - Centro de Transporte Inteligente</p>
+            <p>Diseño y Desarrollo por <strong>Francisco Watson</strong> - Sky Consulting</p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/script.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
